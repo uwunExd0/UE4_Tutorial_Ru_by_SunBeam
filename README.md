@@ -1,36 +1,37 @@
 # This game is going to be totally broken in a bit (tutorials and knowledge inside)
+### переведено с помощью DeepL
 <hr>
-<div id="post_message_3523020">First-up, been reading left and right and it seems some people are having a hard time &quot;reading&quot; or &quot;talking&quot; in UE4 language. Not to mention the poor way in which they're transmitting this information to the public. Before this game, I learned a lot about UE4 the hard and tedious way: download the source code, compile the editor, compile a legacy game (ShooterGame) with debug symbols and f*ck around. That's how I also learned of the internal framework, how objects intertwine and a sh!t ton out of the public source-code. So those of you who think hacking UE4 games revolves around dumping Objects and SDKs.. know that it's not about that. That is merely the last part you'd get to, after a quite interesting learning path. So no, it's all about learning and getting to know Unreal Engine's internal structure. Once you master that, you're good to go. Why? Because every other game will revolve around same principles.<br />
+<div>Во-первых, кажется, что некоторым людям трудно &quot;читать&quot; или &quot;говорить&quot; на языке UE4. Не говоря уже о том, как плохо они передают эту информацию общественности. До этой игры я многое узнал о UE4 тяжелым и утомительным способом: скачать исходный код, скомпилировать редактор, скомпилировать устаревшую игру (ShooterGame) с отладочными символами и возиться. Так я узнал о внутреннем фреймворке, о том, как переплетаются объекты, и еще много чего из публичного исходного кода. Так что те из вас, кто думает, что взлом игр UE4 сводится к сбросу объектов и SDK... знайте, что дело не в этом. Это всего лишь последняя часть, до которой вы доберетесь после довольно интересного пути обучения. Так что нет, все дело в изучении и знакомстве с внутренней структурой Unreal Engine. Как только вы освоите ее, вы сможете приступить к работе. Почему? Потому что любая другая игра будет вращаться вокруг тех же принципов.<br />
 <br />
-Saddle up, it's going to be a BIG post.<br />
+Приготовьтесь, это будет большой пост.<br />
 <br />
 --<br />
 <br />
-<b>HOW TO BUILD THE ENGINE</b> (for local testing, learning, etc.)<br />
+<b>КАК СОБРАТЬ ДВИЖОК</b> (для локального тестирования, обучения и т.п.)<br />
 <br />
-You can get the source code from Epic's github, after <b><u>signing up</u></b> and checking their rules below:<br />
+Вы можете получить исходный код на github компании Epic, после <b><u>регистрации(signing up)</u></b> и ознакомления с их правилами ниже:<br />
 <br />
 <img src="https://i.imgur.com/miZi7h4.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-Download the <a rel="nofollow" href="https://github.com/EpicGames/UnrealEngine/releases/tag/4.26.2-release" target="_blank">4.26.2-release</a> locally. Instructions on how to build the Editor on MSVS2017 are <a rel="nofollow" href="https://github.com/EpicGames/UnrealEngine/tree/4.26" target="_blank">here</a>. (&quot;Getting up and running&quot; section). You can skip step 1, as you've already downloaded the source-code. And step 2, if you've already installed MSVS2017. From 3 to 6, that's your aim.<br />
+Загрузите <a rel="nofollow" href="https://github.com/EpicGames/UnrealEngine/releases/tag/4.26.2-release" target="_blank">4.26.2-release</a>. Инструкции по созданию редактора на MSVS2017 находятся <a rel="nofollow" href="https://github.com/EpicGames/UnrealEngine/tree/4.26" target="_blank">здесь</a>. (раздел &quot;Getting up and running&quot;). Шаг 1 можно пропустить, так как вы уже скачали исходный код. И шаг 2, если вы уже установили MSVS2017. Ваша цель - шаги 3 - 6.<br />
 <br />
-Why 4.26? Because that's what ToF is using:<br />
+Почему 4.26? Потому что это то, что использует ToF:<br />
 <br />
 <img src="https://i.imgur.com/IG5Kre8.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-Then you want to get the data for a DEMO GAME which you can conveniently find in the Epic Games Launcher, in the <b>Vault</b>:<br />
+Затем вы хотите получить данные для DEMO GAME, которые вы можете удобно найти в Epic Games Launcher, в разделе <b>Vault</b>:<br />
 <br />
 <img src="https://i.imgur.com/mJpiFif.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-I personally prefer and use the <b>ShooterGame</b> project.<br />
+Я лично предпочитаю и использую проект <b>ShooterGame</b>.<br />
 <br />
-Things to be aware of:<br />
+На что следует обратить внимание:<br />
 <br />
-1) MSVS will recompile the Engine at least 1 time for each type of build you want to produce. If you want a Development build, then MSVS will build the binaries for that type. If you want a Shipping build, then MSVS will build the binaries for that type as well. Each type requires a full build at least 1 time. People who whine &quot;I changed 1 little thing and Engine is recompiling in full again&quot; don't know what they're doing or maybe are not aware of this aspect.<br />
+1) MSVS перекомпилирует движок по крайней мере 1 раз для каждого типа сборки, которую вы хотите создать. Если вы хотите сборку для разработки, то MSVS будет собирать двоичные файлы для этого типа. Если вы хотите сборку Shipping, то MSVS создаст двоичные файлы и для этого типа. Каждый тип требует полной сборки по крайней мере 1 раз. Люди, которые ноют &quot;Я изменил одну мелочь, и Engine снова полностью перекомпилируется&quot;, не знают, что они делают, или, возможно, не осведомлены об этом аспекте.<br />
 <br />
-2) Always use the &quot;Build&quot; option in MSVS (not &quot;Rebuild&quot;). MSVS will do incremental builds that way and recompile only what's affected by your changes in the source code.<br />
+2) Всегда используйте опцию &quot;Build&quot; в MSVS (не &quot;Rebuild&quot;). Таким образом MSVS будет делать инкрементные сборки и перекомпилировать только то, на что влияют ваши изменения в исходном коде.<br />
 <br />
-On my PC it took over 1-2 hours to build everything. While at it, before the build process, I've set to 1 the ALLOW_CONSOLE and ALLOW_CONSOLE_IN_SHIPPING defines in <i>Build.h</i>. Why? Cuz we want the console available to use in our Shipping build of the game. BY DEFAULT ALL SHIPPING BUILDS HAVE THE CONSOLE CREATION CODE COMMENTED OUT:<br />
+На моем ПК на сборку всего ушло более 1-2 часов. При этом перед процессом сборки я установил значение 1 для определений ALLOW_CONSOLE и ALLOW_CONSOLE_IN_SHIPPING в <i>Build.h</i>. Почему? Потому что мы хотим, чтобы консоль была доступна для использования в нашей сборке игры для доставки.  ПО УМОЛЧАНИЮ ВО ВСЕХ ПОСТАВЛЯЕМЫХ СБОРКАХ КОД СОЗДАНИЯ КОНСОЛИ ЗАКОММЕНТИРОВАН:<br />
 <br />
 <pre>
 <code>ULocalPlayer* UGameViewportClient::SetupInitialLocalPlayer(FString&amp; OutError)
@@ -46,24 +47,24 @@ On my PC it took over 1-2 hours to build everything. While at it, before the bui
 }</code></pre>
 </div>
 
-That's why you &quot;can't enable the console&quot;. That doesn't mean we can't create it artificially <img src="https://www.unknowncheats.me/forum/images/smilies/wink.gif" border="0" alt="" title="Wink" class="inlineimg" /> We can.<br />
+Вот почему вы &quot;не можете включить консоль&quot;. Но это не значит, что мы не можем создать ее искусственно. <img src="https://www.unknowncheats.me/forum/images/smilies/wink.gif" border="0" alt="" title="Wink" class="inlineimg" /> Мы можем.<br />
 <br />
-So for those who are lazy f*cks, here's the compiled project with debug symbols and all. You can also play the game:<br />
+Итак, для тех, кто ленится, вот скомпилированный проект с отладочными символами и всем остальным. Вы также можете поиграть в игру:<br />
 <br />
 <a rel="nofollow" href="https://mega.nz/file/CAxVzCJR#5cqWuShBm3Dc_hNAfrwi_M9lFT337OvZWsOXKRbhkW4" target="_blank">Download ShooterGame 4.26.2 with debug symbols (642MB)</a>.<br />
 <br />
-The game executable you want to fiddle with is in .\WindowsNoEditor\ShooterGame\Binaries\Win64 path:<br />
+Исполняемый файл игры, с которым вы хотите поработать, находится по пути .\WindowsNoEditor\ShooterGame\Binaries\Win64:<br />
 <br />
 <ul><li>ShooterGame-Win64-Shipping.exe</li>
 <li>ShooterGame-Win64-Shipping.pdb</li>
 </ul><br />
-Why go through all of this? Simple: ToF uses the same Engine build as the game that I just compiled. That means the CORE functions are going to be looking the same, more or less, and their ASM architecture will match 99.99%. That being said, you can copy a sequence of bytes from the prologue or body of a function in ShooterGame and scan for it in QRSL and you will find it. Given I was a good boy and also shipped in the .pdb file, you will now also know the NAME of the function.<br />
+Зачем проходить через все это? Все просто: ToF использует ту же сборку Engine, что и игра, которую я только что скомпилировал. Это означает, что функции CORE будут выглядеть одинаково, более или менее, и их архитектура ASM будет совпадать на 99,99%. Учитывая это, вы можете скопировать последовательность байтов из пролога или тела функции в ShooterGame и просканировать ее в QRSL, и вы ее найдете. Учитывая, что я был хорошим мальчиком и также отправил в .pdb файл, вы теперь также будете знать НАЗВАНИЕ функции.<br />
 <br />
-What does the above solve: &quot;I think the function is called..&quot;, &quot;how or where can I find ProcessEvent?&quot;, etc. If not even with this kind of help you won't make it, then I'm at a loss for words.<br />
+Что решает вышеперечисленное: &quot;кажется, функция называется...&quot;, &quot;как или где я могу найти ProcessEvent?&quot; и т.д. Если даже с такой помощью у вас ничего не получится, то я в растерянности.<br />
 <br />
 -- <br />
 <br />
-<b>EXAMPLE OF CROSS-FINDING FUNCTIONS</b><br />
+<b>ПРИМЕР смINDING FUNCTIONS</b><br />
 <br />
 Example (top is ShooterGame, bottom is QRSL):<br />
 <br />
@@ -329,4 +330,4 @@ There you have it, enjoy! <img src="https://www.unknowncheats.me/forum/images/sm
 PROXIMA will take measures and enhance their anti-cheat so CE can't be used at all in the future. This has been the evolution of all MP anti-cheats and developers across time <img src="https://www.unknowncheats.me/forum/images/smilies/smile.gif" border="0" alt="" title="Big Grin" class="inlineimg" /> It will happen again. So please appreciate the learning path and having been taught useful things in this topic rather than lash out with &quot;it's your fault PROXIMA patched everything&quot;, mkay? Cheers!<br />
 <br />
 BR,<br />
-Sun
+Sun</div>
