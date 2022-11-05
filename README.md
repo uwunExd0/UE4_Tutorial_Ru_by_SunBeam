@@ -66,7 +66,7 @@
 <br />
 -- <br />
 <br />
-<b>ПРИМЕР смINDING FUNCTIONS</b><br />
+<b>ПРИМЕР CROSS_FINDING ФУНКЦИЙ</b><br />
 <br />
 Пример (вверху - ShooterGame, внизу - QRSL):<br />
 <br />
@@ -225,7 +225,7 @@ registerSymbol( &quot;FViewport__Draw_hookspot&quot;, t, true )
 </code>
 </pre>
 
-<li> Then there's a sh!t ton of aobs that scan for critical UE4 stuff:<br />
+<li> Затем есть тонна aob'ов, которые сканируют критические материалы UE4:<br />
 <br />
 <pre><code>unregistersymbol( StaticFindObject )
   unregistersymbol( FConsoleManager__ProcessUserConsoleInput_hookspot )
