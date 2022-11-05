@@ -346,5 +346,7 @@ Sun</div>
 <br />
 <br />
 <br />
-<img src="./nasral.gif" border="0" alt="" onload="NcodeImageResizer.createOn(this);" />
 урааа конес.
+<div align="center">
+    <img src="./nasral.gif" width="800" height="200"/>
+</div>
