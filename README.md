@@ -1,5 +1,5 @@
 # This game is going to be totally broken in a bit (tutorials and knowledge inside)
-### переведено с помощью DeepL
+жеска напереводил целую кучу перевода с помощью deepl
 
 <a rel="nofollow" href="https://www.unknowncheats.me/forum/tower-of-fantasy/514006-game-totally-broken-bit-tutorials-knowledge-inside.html" target="_blank">Original (SunBeam)</a>
 <hr>
@@ -334,4 +334,7 @@ PROXIMA примет меры и усилит анти-чит, чтобы в б�
 С наилучшими пожеланиями,<br />
 Sun</div>
 <br />
+<br />
+<br />
+<img src="./nasral.gif" border="0" alt="" onload="NcodeImageResizer.createOn(this);" />
 урааа конес.
