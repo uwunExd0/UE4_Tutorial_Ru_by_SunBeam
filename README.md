@@ -1,5 +1,5 @@
 # 👍Этой игре полный пиздец (учебники и знания внутри)
-### p.s. речь идет о ТоФе
+p.s. речь идет о ТоФе <br />
 жеска напереводил целую кучу перевода с помощью deepl
 
 <a rel="nofollow" href="https://www.unknowncheats.me/forum/tower-of-fantasy/514006-game-totally-broken-bit-tutorials-knowledge-inside.html" target="_blank">Оригинал от SunBeam тут </a>
