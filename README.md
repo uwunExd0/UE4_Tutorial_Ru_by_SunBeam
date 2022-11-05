@@ -348,5 +348,5 @@ Sun</div>
 <br />
 урааа конес.
 <div align="center">
-    <img src="./nasral.gif" width="800" height="200"/>
+    <img src="https://github.com/uwunExd0/uwunExd0/blob/main/nasral.gif" width="800" height="200"/>
 </div>
