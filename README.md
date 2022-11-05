@@ -347,7 +347,7 @@ Sun</div>
 <br />
 <br />
 <br />
-урааа конес.
+<br />
 <div align="center">
     <img src="https://github.com/uwunExd0/uwunExd0/blob/main/nasral.gif" width="800" height="200"/>
 </div>
