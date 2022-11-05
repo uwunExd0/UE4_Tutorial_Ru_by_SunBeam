@@ -1,5 +1,7 @@
 # This game is going to be totally broken in a bit (tutorials and knowledge inside)
 ### переведено с помощью DeepL
+
+<a rel="nofollow" href="https://www.unknowncheats.me/forum/tower-of-fantasy/514006-game-totally-broken-bit-tutorials-knowledge-inside.html" target="_blank">Original (SunBeam)</a>
 <hr>
 <div>Во-первых, кажется, что некоторым людям трудно &quot;читать&quot; или &quot;говорить&quot; на языке UE4. Не говоря уже о том, как плохо они передают эту информацию общественности. До этой игры я многое узнал о UE4 тяжелым и утомительным способом: скачать исходный код, скомпилировать редактор, скомпилировать устаревшую игру (ShooterGame) с отладочными символами и возиться. Так я узнал о внутреннем фреймворке, о том, как переплетаются объекты, и еще много чего из публичного исходного кода. Так что те из вас, кто думает, что взлом игр UE4 сводится к сбросу объектов и SDK... знайте, что дело не в этом. Это всего лишь последняя часть, до которой вы доберетесь после довольно интересного пути обучения. Так что нет, все дело в изучении и знакомстве с внутренней структурой Unreal Engine. Как только вы освоите ее, вы сможете приступить к работе. Почему? Потому что любая другая игра будет вращаться вокруг тех же принципов.<br />
 <br />
@@ -66,23 +68,23 @@
 <br />
 <b>ПРИМЕР смINDING FUNCTIONS</b><br />
 <br />
-Example (top is ShooterGame, bottom is QRSL):<br />
+Пример (вверху - ShooterGame, внизу - QRSL):<br />
 <br />
 <img src="https://i.imgur.com/TRNgcc4.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-Oh, gee, where or how can I find <b>ProcessEvent</b>?:<br />
+О, нееет, где или как я могу найти <b>ProcessEvent</b>?<br />
 <br />
 <img src="https://i.imgur.com/UcXsaNa.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-Right-click it, Follow in Disassemble, select several bytes and Shift+C to copy them:<br />
+Щелкните правой кнопкой мыши, выполните команду Disassemble, выберите несколько байтов и Shift+C для их копирования:<br />
 <br />
 <img src="https://i.imgur.com/7FKK3No.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-Go to QRSL, press Ctrl+B, paste bytes, tick Entire Block:<br />
+Перейдите в QRSL, нажмите Ctrl+B, вставьте байты, поставьте галочку на Entire Block:<br />
 <br />
 <img src="https://i.imgur.com/4TKD7FM.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-And voila, 1 result:<br />
+И вуаля, 1 результат:<br />
 <br />
 <img src="https://i.imgur.com/QnksNgK.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
@@ -90,21 +92,21 @@ And voila, 1 result:<br />
 <br />
 --<br />
 <br />
-<b>KNOWLEDGE IS POWER</b><br />
+<b>ЗНАНИЕ - СИЛА</b><br />
 <br />
-With the logic presented above plus many other additional tricks and static analysis, I was able to understand how UE4 works, why people dump Objects and Names, what dumping of that relies on, how it is done, devise a patch to hook almost ANY UE4 version so that I can get very fast to UObjects of interest with just a simple CE table.<br />
+С помощью представленной выше логики плюс многих других дополнительных приемов и статического анализа я смог понять, как работает UE4, почему люди сбрасывают объекты и имена, на что опирается сброс, как это делается, разработать патч для подключения практически любой версии UE4, чтобы я мог очень быстро добраться до интересующих меня UObjects с помощью простой таблицы CE.<br />
 <br />
-So below, here's my table for this game with several critical CORE stuff that you will most definitely make use of. Note that NOT EVERYTHING is updated in there, as it's a work in progress. My aim isn't to play or hack ToF, but to expose as much as possible, so any with a little bit of brain can work their way out:<br />
+Итак, ниже приведена моя таблица для этой игры с несколькими важнейшими CORE вещами, которые вам обязательно пригодятся. Обратите внимание, что НЕ ВСЁ здесь обновлено, так как это работа в процессе. Моя цель не в том, чтобы играть или взламывать ToF, а в том, чтобы раскрыть как можно больше, чтобы любой, у кого есть хоть немного мозгов, мог разобраться:<br />
 <br />
 <img src="https://i.imgur.com/7XnKieI.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
 <a rel="nofollow" href="https://mega.nz/file/iUxkSBhA#oFec-wYNQV0oG4ZCYuHqOJ2cnpVJM00EuZK-jhBQl4I" target="_blank">Download table</a><br />
 <br />
-NOTE: PLEASE DO NOT YET UPLOAD IT TO UC! SOME SCRIPTS ARE NOT UPDATED. Will submit it myself once I'm done with it.<br />
+ВНИМАНИЕ: ПОЖАЛУЙСТА, ПОКА НЕ ЗАГРУЖАЙТЕ ЕГО В UC! НЕКОТОРЫЕ СКРИПТЫ НЕ ОБНОВЛЕНЫ. Я отправлю его сам, как только закончу работу над ним.<br />
 <br />
-Why is the table useful at this point in time? Let's open the <b>[ Initialize ]</b> script:<br />
+Почему таблица полезна в данный момент? Давайте откроем <b>[ Initialize ]</b> скрипт:<br />
 
-<ul><li>You have a way to run your own <b>staticFindObject</b>:<br />
+<ul><li>У вас есть возможность управлять своим <b>staticFindObject</b>:<br />
 <br />
 <pre>
 <code>
@@ -143,7 +145,7 @@ if t &lt; 1 then stopExec( &quot;'GameViewport' ObjectProperty not found.&quot; 
 </code>
 </pre>
 
-<li> There's one single hook you need to get the UObject relationship starting from <b>LocalPlayer</b>:<br />
+<li> Есть один единственный хук, который нужен для получения отношения UObject, начиная с <b>LocalPlayer</b>:<br />
 <br />
 <pre>
 <code>
@@ -207,7 +209,7 @@ local _script = [[
   </code>
   </pre>
   
-I scan for and hook the return from <i>GetGamePlayers</i> function. This aob works/worked on 90% of my UE4 games...
+Я сканирую и подключаю возврат из функции <i>GetGamePlayers</i>. Этот aob работает/работал на 90% моих игр UE4...
 <br />
 
 Code:
@@ -245,89 +247,91 @@ registerSymbol( &quot;FViewport__Draw_hookspot&quot;, t, true )
   unregistersymbol( pszEngineString )
   unregistersymbol( FViewport__Draw_hookspot )</code></pre>
 
-<p>You can find the aobs laid out for you, waiting to be reused in other projects :P</p><br />
+Вы можете найти aobs, разложенные для вас, ожидающие повторного использования в других проектах :P<br />
 <br /></li>
 
-<li> There's an incipient hierarchy tree based on the hook I was mentioning above in the [ Debug ] section:<br />
+<li> В разделе [ Debug ] есть зарождающееся иерархическое дерево, основанное на крючке, о котором я говорил выше:<br />
 <br />
 <img src="https://i.imgur.com/tEe1oh3.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br /></li>
-<li> There is a script that enables the use of the SET command in the console, with the help of which you can manually <b>set</b> UProperty-es :P (e.g.: <i>set Engine.Actor bCanBeDamaged True</i>)<br />
+<li> Существует сценарий, который позволяет использовать команду SET в консоли, с помощью которого вы можете вручную <b>установить</b> UProperty-es :P (например: <i>set Engine.Actor bCanBeDamaged True</i>)<br />
 <br /></li>
-<li> There is a script that helps with hooking <i>UPlayer::Exec</i> so that when you pass it an UObject as context and run said function in the console, it will automatically be made executable (UFUNC_Exec) and allow the running of that command in the Class context of that object:<br />
+<li> Существует сценарий, который помогает подключить <i>UPlayer::Exec</i> таким образом, что когда вы передаете ему UObject в качестве контекста и запускаете указанную функцию в консоли, она автоматически становится исполняемой (UFUNC_Exec) и позволяет выполнить эту команду в контексте класса этого объекта.:<br />
 <br />
 <img src="https://i.imgur.com/rBIDN6T.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-Pretty much like what this user here is instructing, conceptually: <a href="https://www.unknowncheats.me/forum/tower-of-fantasy/513961-pvp-bots-cheat-engine-calling-game-functions.html" target="_blank">PVP bots in Cheat Engine (calling game functions)</a>.<br />
+Очень похоже на то, чему учит этот пользователь, концептуально: <a href="https://www.unknowncheats.me/forum/tower-of-fantasy/513961-pvp-bots-cheat-engine-calling-game-functions.html" target="_blank">PVP bots in Cheat Engine (calling game functions)</a>.<br />
 <br /></li>
-<li> Know some CVars? You can unrestrict them :P<br />
+<li> Знаете некоторых CVARов? Вы можете снять с них ограничения :P<br />
 <br /></li>
-<li> Lastly, if you're tired of seeing the smear of text in the Console, you can clear it out (I'm not 100% sure the offset is correct in that script; will need to check).</li>
+<li> Наконец, если вам надоело видеть размазанный текст в консоли, вы можете очистить его (я не уверен на 100%, что смещение в этом скрипте правильное; нужно будет проверить).</li>
 </ul>
 <br />
 --<br />
 <br />
 <b>Cake-san</b><br />
 <br />
-If you want a real time method to faster determine which UObject is at which offset in some other UObject, then this guy really nailed it:<br />
+Если вам нужен метод реального времени для более быстрого определения того, какой UObject находится по смещению в каком-то другом UObject, то этот парень действительно сделал это:<br />
 <br />
 <a rel="nofollow" href="https://fearlessrevolution.com/viewtopic.php?p=167452#p167452" target="_blank">Get Cake-san's awesome Basic UE4 Win64 Base Table</a><br />
 <br />
-Make sure you download <font color="red">&quot;Automate version Update 7.3&quot;</font> script. Not others. Why? There's been several fixes put into update, so it makes no sense to use older versions.<br />
+Убедитесь, что вы загрузили <font color="red">&quot;Automate version Update 7.3&quot;</font> скрипт. Не другие. Почему? В обновление было внесено несколько исправлений, поэтому нет смысла использовать старые версии.<br />
 <br />
-So.. let's say we use both my table and his in parallel:<br />
+Итак... допустим, мы используем мой и его стол параллельно:<br />
 <br />
 <i>[My table]</i>:<br />
 <br />
-&lt; before everything, make sure you can actually access the game's memory space; won't talk about bypassing here, now &gt;<br />
+&lt; прежде всего, убедитесь, что вы действительно можете получить доступ к пространству памяти игры; не будем говорить об обходе здесь и сейчас &gt;<br />
 <br />
-1) Open table and run [ Initialize ] script.<br />
-2) Considering you are in-game, expand [ Debug ] section and LocalPlayer node. Take note of what you see there:<br />
+1) Откройте таблицу и запустите скрипт [ Initialize ].<br />
+2) Учитывая, что вы находитесь в игре, разверните раздел [ Debug ] и узел LocalPlayer. Обратите внимание на то, что вы там видите:<br />
 <br />
 <img src="https://i.imgur.com/X7ubn7T.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-Note that your address will be different. It's normal. Just remember YOUR value from the red rectangle.<br />
+Обратите внимание, что ваш адрес будет другим. Это нормально. Просто запомните ВАШЕ значение из красного прямоугольника.<br />
 <br />
 [i]Cake-san's table[/b]:<br />
 <br />
-1) Open table in another CE instance.<br />
-2) Select QRSL.exe game process.<br />
-3) Activate &quot;Unreal Engine&quot; script and wait for it to finish its job. You'll know when it's done processing, as the Lua Engine window will close and sub-scripts expand. Yes, it will take about 2-3 minutes. This is what you'll see:<br />
+1) Откройте таблицу в другом экземпляре CE.<br />
+2) Выберите игровой процесс QRSL.exe.<br />
+3) Активируйте скрипт &quot;Unreal Engine&quot; и подождите, пока он закончит свою работу. Вы узнаете, когда он закончит обработку, так как окно Lua Engine закроется, а подскрипты развернутся. Да, это займет около 2-3 минут. Вот что вы увидите:<br />
 <br />
 <img src="https://i.imgur.com/VXfFA2v.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-4) Activate &quot;Enable UE Structure Lookup&quot; script.<br />
-5) Click Memory View, then &quot;Tools&quot; from the top menu, then &quot;Dissect data/structures&quot;, so this will open up:<br />
+4) Активируйте скрипт &quot;Enable UE Structure Lookup&quot;.<br />
+5) Нажмите Memory View, затем &quot;Tools&quot; из верхнего меню, затем &quot;Dissect data/structures&quot;, откроется вот это:<br />
 <br />
 <img src="https://i.imgur.com/ENjOD6f.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-6) Remember that address from the red rectangle in my table? Switch to the other CE instance, double-click and copy it (or just move the window aside so you can see it). Back to Cake-san's table, paste it in the top input field:<br />
+6) Помните адрес из красного прямоугольника в моей таблице? Переключитесь на другой экземпляр CE, дважды щелкните и скопируйте его (или просто отодвиньте окно, чтобы его было видно). Вернитесь к таблице господина Торта и вставьте его в верхнее поле ввода:<br />
 <br />
 <img src="https://i.imgur.com/eHBUTYg.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-7) Now click &quot;Structures&quot; from the top menu and &quot;Define new structure&quot; and you will see these:<br />
+7) Теперь нажмите &quot;Структуры&quot; в верхнем меню и &quot;Определить новую структуру&quot;, и вы увидите следующее:<br />
 <br />
 <img src="https://i.imgur.com/328EdwC.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
 <img src="https://i.imgur.com/tB7YGYN.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-So.. where's <b>PlayerController</b> in <b>LocalPlayer</b>, I hear?? Well, it's at offset 0x30. See.. not everything revolves around CheatGear and SDK dumping <img src="https://www.unknowncheats.me/forum/images/smilies/smile.gif" border="0" alt="" title="Big Grin" class="inlineimg" /><br />
+Итак... где же <b>PlayerController</b>, я слышал в <b>LocalPlayer</b>?? Ну, он находится по смещению 0x30. Видите... не все крутится вокруг CheatGear и SDK-дампинга <img src="https://www.unknowncheats.me/forum/images/smilies/smile.gif" border="0" alt="" title="Big Grin" class="inlineimg" /><br />
 <br />
-Speaking of dumping..<br />
+Кстати, о дампинге...<br />
 <br />
-8) Run this script, then check your Desktop (although the file should already open for you in Notepad):<br />
+8) Запустите этот скрипт, затем проверьте свой Рабочий стол (хотя файл уже должен быть открыт для вас в Блокноте):<br />
 <br />
 <img src="https://i.imgur.com/CK48IZm.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
 <img src="https://i.imgur.com/UmvJ1Gs.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
 <br />
-There you have it, enjoy! <img src="https://www.unknowncheats.me/forum/images/smilies/smile.gif" border="0" alt="" title="Big Grin" class="inlineimg" /><br />
+Вот и все, наслаждайтесь! <img src="https://www.unknowncheats.me/forum/images/smilies/smile.gif" border="0" alt="" title="Big Grin" class="inlineimg" /><br />
 <br />
 --<br />
 <br />
-<b>WARNING AHEAD</b><br />
+<b>ПРЕДОСТЕРЕЖЕНИЕ</b><br />
 <br />
-PROXIMA will take measures and enhance their anti-cheat so CE can't be used at all in the future. This has been the evolution of all MP anti-cheats and developers across time <img src="https://www.unknowncheats.me/forum/images/smilies/smile.gif" border="0" alt="" title="Big Grin" class="inlineimg" /> It will happen again. So please appreciate the learning path and having been taught useful things in this topic rather than lash out with &quot;it's your fault PROXIMA patched everything&quot;, mkay? Cheers!<br />
+PROXIMA примет меры и усилит анти-чит, чтобы в будущем CE вообще нельзя было использовать. Такова эволюция всех анти-читов и разработчиков MP во все времена <img src="https://www.unknowncheats.me/forum/images/smilies/smile.gif" border="0" alt="" title="Big Grin" class="inlineimg" /> Это случится снова. Так что, пожалуйста, оцените путь обучения и то, что вас научили полезным вещам в этой теме, а не бросайтесь словами &quot;это ваша вина, что PROXIMA все исправила&quot;, хорошо? Будьте здоровы!<br />
 <br />
-BR,<br />
+С наилучшими пожеланиями,<br />
 Sun</div>
+<br />
+урааа конес.
