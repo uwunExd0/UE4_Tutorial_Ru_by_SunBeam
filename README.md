@@ -1,7 +1,7 @@
-# This game is going to be totally broken in a bit (tutorials and knowledge inside)
+# Этой игре полный пиздец (учебники и знания внутри)
 жеска напереводил целую кучу перевода с помощью deepl
 
-<a rel="nofollow" href="https://www.unknowncheats.me/forum/tower-of-fantasy/514006-game-totally-broken-bit-tutorials-knowledge-inside.html" target="_blank">Original (SunBeam)</a>
+<a rel="nofollow" href="https://www.unknowncheats.me/forum/tower-of-fantasy/514006-game-totally-broken-bit-tutorials-knowledge-inside.html" target="_blank">Оригинал от SunBeam тут </a>
 <hr>
 <div>Во-первых, кажется, что некоторым людям трудно &quot;читать&quot; или &quot;говорить&quot; на языке UE4. Не говоря уже о том, как плохо они передают эту информацию общественности. До этой игры я многое узнал о UE4 тяжелым и утомительным способом: скачать исходный код, скомпилировать редактор, скомпилировать устаревшую игру (ShooterGame) с отладочными символами и возиться. Так я узнал о внутреннем фреймворке, о том, как переплетаются объекты, и еще много чего из публичного исходного кода. Так что те из вас, кто думает, что взлом игр UE4 сводится к сбросу объектов и SDK... знайте, что дело не в этом. Это всего лишь последняя часть, до которой вы доберетесь после довольно интересного пути обучения. Так что нет, все дело в изучении и знакомстве с внутренней структурой Unreal Engine. Как только вы освоите ее, вы сможете приступить к работе. Почему? Потому что любая другая игра будет вращаться вокруг тех же принципов.<br />
 <br />
@@ -14,6 +14,15 @@
 Вы можете получить исходный код на github компании Epic, после <b><u>регистрации(signing up)</u></b> и ознакомления с их правилами ниже:<br />
 <br />
 <img src="https://i.imgur.com/miZi7h4.png" border="0" alt="" onload="NcodeImageResizer.createOn(this);" /><br />
+	
+[Перевод картинки сверху]
+<br />
+ВНИМАНИЕ<br />
+Прежде чем вы сможете получить доступ к репозиторию на сайте https://github.com/EpicGames/UnrealEngine, вы должны: 
+1) быть подписчиком Unreal Engine. 
+2) иметь учетную запись на GitHub. 
+3) связать свою учетную запись GitHub с учетной записью Unreal Engine, как описано на странице UE4 на GitHub.
+<br />
 <br />
 Загрузите <a rel="nofollow" href="https://github.com/EpicGames/UnrealEngine/releases/tag/4.26.2-release" target="_blank">4.26.2-release</a>. Инструкции по созданию редактора на MSVS2017 находятся <a rel="nofollow" href="https://github.com/EpicGames/UnrealEngine/tree/4.26" target="_blank">здесь</a>. (раздел &quot;Getting up and running&quot;). Шаг 1 можно пропустить, так как вы уже скачали исходный код. И шаг 2, если вы уже установили MSVS2017. Ваша цель - шаги 3 - 6.<br />
 <br />
