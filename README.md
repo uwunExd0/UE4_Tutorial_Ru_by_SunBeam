@@ -25,6 +25,7 @@
 3) связать свою учетную запись GitHub с учетной записью Unreal Engine, как описано на странице UE4 на GitHub.
 <br />
 <br />
+<br />
 Загрузите <a rel="nofollow" href="https://github.com/EpicGames/UnrealEngine/releases/tag/4.26.2-release" target="_blank">4.26.2-release</a>. Инструкции по созданию редактора на MSVS2017 находятся <a rel="nofollow" href="https://github.com/EpicGames/UnrealEngine/tree/4.26" target="_blank">здесь</a>. (раздел &quot;Getting up and running&quot;). Шаг 1 можно пропустить, так как вы уже скачали исходный код. И шаг 2, если вы уже установили MSVS2017. Ваша цель - шаги 3 - 6.<br />
 <br />
 Почему 4.26? Потому что это то, что использует ToF:<br />
